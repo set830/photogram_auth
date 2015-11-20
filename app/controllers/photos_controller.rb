@@ -1,6 +1,15 @@
 class PhotosController < ApplicationController
+  before_action :current_user_must_be_owner :only => [:edit,:update,:destroy]
+
   def index
     @photos = Photo.all
+  end
+
+  def current_user_must_be_owner
+    @photo = Photo.find(params[:id])
+    if @photo.user != current_user
+      redirect_to root_url, :alert => "Not authorized"
+    end
   end
 
   def show
@@ -44,9 +53,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
-
     @photo.destroy
-
     redirect_to "/photos", :notice => "Photo deleted."
   end
 end
