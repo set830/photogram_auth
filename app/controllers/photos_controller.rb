@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :current_user_must_be_owner :only => [:edit,:update,:destroy]
+  before_action :current_user_must_be_owner, :only => [:edit,:update,:destroy]
 
   def index
     @photos = Photo.all

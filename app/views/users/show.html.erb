@@ -8,12 +8,24 @@
       <dt>Username</dt>
       <dd><%= @user.username %></dd>
     </dl>
+  </div>
+</div>
 
 
+ <ul class="list-group">
+    <li class="list-group-item list-group-item-success">
+      Photos
+    </li>
+    <% @users.photos do |photo| %>
+    <li class="list-group-item">
+      <%= photo.image %>
+      </a>
+    </li>
+    <% end %>
+</ul>
 
 
-
-    <div class="btn-group btn-group-justified">
+<div class="btn-group btn-group-justified">
       <a href="/users" class="btn btn-primary">
         Back
       </a>
@@ -23,6 +35,5 @@
       <a href="/delete_photo/<%= @user.id %>" class="btn btn-danger" rel="nofollow">
         Delete
       </a>
-    </div>
-  </div>
 </div>
+
