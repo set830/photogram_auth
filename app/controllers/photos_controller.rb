@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @comments = Comment.all
   end
 
   def current_user_must_be_owner
