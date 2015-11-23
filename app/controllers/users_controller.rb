@@ -46,4 +46,9 @@ class UsersController < ApplicationController
 
     redirect_to "/comments", :notice => "Comment deleted."
   end
+
+  def my_likes
+    @likes = Like.all
+    @user = current_user
+  end
 end

@@ -16,9 +16,9 @@
     <li class="list-group-item list-group-item-success">
       Photos
     </li>
-    <% @user.photos.each do |photo| %>
+    <% @likes.each do |like| %>
     <li class="list-group-item">
-    <img src="<%= photo.image %>" width="500"></dd>
+    <img src="<%= like.photo.image %>" width="500"></dd>
       </a>
     </li>
     <% end %>

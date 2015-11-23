@@ -42,9 +42,17 @@
         <ul class="nav navbar-nav">
           <li><a href="/users">Users</a></li>
           <li><a href="/comments">Comments</a></li>
+
+        <% if current_user.present?%>
+          <li><a href="/my_likes">My Likes</a></li>
+
+        <% else%>
           <li><a href="/likes">Likes</a></li>
+        <% end%>
+
           <% if current_user.present?%>
           <li><a href="/users/<%=current_user.id%>">My Photos</a></li>
+
         <% else%>
           <li><a href="/photos">Photos</a></li>
         <% end%>

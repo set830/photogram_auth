@@ -70,7 +70,23 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_user/:id", :controller => "users", :action => "destroy"
+  #------------------------------
 
+
+   # Routes for the myLikes resource:
+  # CREATE
+  #get "/users/new", :controller => "users", :action => "new"
+  #post "/create_user", :controller => "users", :action => "create"
+
+  # READ
+  get "/my_likes", :controller => "users", :action => "my_likes"
+
+  # UPDATE
+  #get "/users/:id/edit", :controller => "users", :action => "edit"
+  #post "/update_user/:id", :controller => "users", :action => "update"
+
+  # DELETE
+  #get "/delete_user/:id", :controller => "users", :action => "destroy"
 
 
 
