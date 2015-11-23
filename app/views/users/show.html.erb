@@ -16,7 +16,7 @@
     <li class="list-group-item list-group-item-success">
       Photos
     </li>
-    <% @users.photos do |photo| %>
+    <% @user.photos.each do |photo| %>
     <li class="list-group-item">
       <%= photo.image %>
       </a>
