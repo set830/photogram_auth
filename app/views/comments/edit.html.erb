@@ -29,11 +29,11 @@
 
       <!-- Label and input for body -->
       <div class="form-group">
-        <label for="body" class="control-label">
+        <label for="body" class="sr-only">
           Body
         </label>
 
-        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"><%= @comment.body %></textarea>
+        <input type="text" id="body" name="body" placeholder="Add a comment..." class="form-control"
       </div>
 
       <!-- Label and input for user_id -->
