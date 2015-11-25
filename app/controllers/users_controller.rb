@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def my_likes
-    @likes = Like.all
+    @likes = current_user.liked_photos
     @user = current_user
   end
 end

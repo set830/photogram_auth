@@ -14,13 +14,18 @@
       <dt>User</dt>
       <dd><%= @photo.user_id %></dd>
 
+      <dt>Favorited by</dt>
+      <dd><%= @photo.fans.pluck(:username).to_sentence%></dd>
+
+
       <dt>Comments</dt>
       <dd>
       <ul>
         <% @photo.comments.each do |comment|%>
         <li>
-          <h6><%= comment.user.username %></h6>
-          <%= comment.body %>
+          <h6><%= comment.user.username %>
+          <small><%=time_ago_in_words(comment.created_at)%></small></h6>
+         <p> <%= comment.body %></p>
         </li>
         <% end %>
         <li>
